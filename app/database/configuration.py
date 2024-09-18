@@ -1,3 +1,7 @@
+from sqlalchemy import create_engine,event
+from sqlalchemy.orm import sessionmarker
+from sqlalchemy. engine import engine
+
 #datos para la conexion a BD
 
 dataBaseName="gestordb"
@@ -9,4 +13,6 @@ server="localhost"
 #creando la conexion
 dataBaseConnection=f"mysql+mysqlconnector://{userName}:{userPassword}@{server}:{connectionPort}/{dataBaseName}"
 
-print(dataBaseConnection)
+#creo el motor de conexion
+engine= create_engine(databaseconnecction)
+sessionLocal=sessionmaker(autocommit=false,autoflush=false, bind=engine)
